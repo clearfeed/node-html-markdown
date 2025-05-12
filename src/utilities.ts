@@ -49,8 +49,9 @@ export function splitSpecial(s: string) {
 export function tagSurround(content: string, surroundStr: string) {
   // If un-escaped surroundStr already occurs, remove all instances
   // See: https://github.com/crosstype/node-html-markdown/issues/18
+  // We also do not need to remove nested underscores '_' as using underscores is common in texts
   const nestedSurroundStrIndex = content.indexOf(surroundStr);
-  if (nestedSurroundStrIndex >= 0)
+  if (nestedSurroundStrIndex >= 0 && surroundStr !== '_') 
     content = content.replace(
       new RegExp(`([^\\\\])\\${surroundStr.split('').join('\\')}`, 'gm'),
       '$1'
