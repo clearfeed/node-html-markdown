@@ -59,5 +59,25 @@
     "ts-node": "^10.9.2",
     "ts-patch": "^3.3.0",
     "typescript": "^5.9.3"
+  },
+  "resolutions": {
+    "**/diff": "^4.0.4",
+    "**/handlebars": "^4.7.9",
+    "**/micromatch/picomatch": "^2.3.2",
+    "**/anymatch/picomatch": "^2.3.2",
+    "**/jest-util/picomatch": "^4.0.4"
+  },
+  "overrides": {
+    "diff": "^4.0.4",
+    "handlebars": "^4.7.9",
+    "micromatch": {
+      "picomatch": "^2.3.2"
+    },
+    "anymatch": {
+      "picomatch": "^2.3.2"
+    },
+    "jest-util": {
+      "picomatch": "^4.0.4"
+    }
   }
 }
